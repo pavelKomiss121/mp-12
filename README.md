@@ -27,3 +27,10 @@
 
 Тест проверки палиндрома - граничные случаи
 - Тесты с цифрами
+
+Также возникла ошибка:
+
+``Error: Gradle script '/home/runner/work/up-12/up-12/gradlew' is not executable. ``
+
+Чтобы найти решение, я ввел запрос в браузере:
+``site:stackoverflow.com graddle.yml Error: Gradle script gradlew is not executable.``
