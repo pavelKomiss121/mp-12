@@ -1,0 +1,25 @@
+name: Java CI with Gradle  # Звучит профессионально!
+
+on:
+  push:
+    branches: [ main ]  # Когда сработает? При пуше в main!
+  pull_request:
+    branches: [ main ]  # И при создании PR в main!
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # На какой ОС будем собирать
+
+    steps:
+      - uses: actions/checkout@v3  # Шаг 1: Берём код из репозитория
+
+      - name: Set up JDK 21  # Шаг 2: Устанавливаем Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Build with Gradle  # Шаг 3: Запускаем Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build  # Аргумент для gradle
